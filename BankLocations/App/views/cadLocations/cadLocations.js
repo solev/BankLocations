@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .controller('banks', banks);
+        .controller('cadLocations', cadLocations);
 
-    banks.$inject = ['$scope', '$http', 'canvas'];
+    cadLocations.$inject = ['$scope', '$http', 'canvas'];
 
-    function banks($scope, $http, canvas) {
+    function cadLocations($scope, $http, canvas) {
 
         const locationPrefix = 'Location';
         const bankPrefix = 'Bank';
@@ -22,6 +22,21 @@
 
         var treeReady;
         var canvasContext;
+
+        var siteImage = $("img");
+        $scope.siteImage = siteImage;
+
+        $scope.$watch(function () {
+            return $scope.siteImage.attr("src");
+        }, function () {
+
+            var maxHeight = $(".locations").height();
+            
+            if (siteImage.height() < maxHeight) {
+                siteImage.height(maxHeight);
+            }
+
+        })
 
         getSites();
         function getSites() {

@@ -223,7 +223,10 @@
     <Content Include="App\directives\jstree\ngJsTree.js" />
     <Content Include="App\directives\jstree\ngJsTree.min.js" />
     <Content Include="App\services\canvas.factory.js" />
-    <Content Include="App\views\banks\banks.js" />
+    <Content Include="App\views\cadLocations\cadLocations.html" />
+    <Content Include="App\views\cadLocations\cadLocations.js" />
+    <Content Include="App\views\cadVendor\cadVendor.html" />
+    <Content Include="App\views\cadVendor\cadVendor.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\32px.png" />
     <Content Include="Content\bootstrap.css" />
@@ -1114,7 +1117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sites\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

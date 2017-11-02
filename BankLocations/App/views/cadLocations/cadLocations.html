@@ -1,0 +1,64 @@
+﻿<div class="row main-content full-height">
+    <div class="col-md-2 full-height sidebar">
+        <div class="sites">
+            <label class="control-label">Sites</label>
+            <select class="form-control" ng-change="onSiteChange()" ng-model="activeSite" ng-options="s as s.SiteName for s in sites"></select>
+
+            <p style="margin-top:15px;border-bottom: 1px solid #d2d2d2;font-weight:bold;">Site Details</p>
+
+            <table style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Width (natural)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{siteImage.prop('naturalWidth')}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Height (natural)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{siteImage.prop('naturalHeight')}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Width (screen)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{siteImage.width()}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Height (screen)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{siteImage.height()}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+        </div>
+        <div class="tree">
+            <div ng-if="activeSite != null" js-tree="treeConfig" ng-model="zonesTree" tree="treeInstance" tree-events-obj="treeEvents"></div>
+        </div>
+    </div>
+    <div class="col-md-10 full-height locations">
+        <img class="site-image" src="data:image/png;base64, {{activeSite.BackgroundImage}}" />
+        <!--<canvas id="canvas_grid" canvas-grid></canvas>-->
+        <canvas id="canvas"></canvas>
+    </div>
+</div>

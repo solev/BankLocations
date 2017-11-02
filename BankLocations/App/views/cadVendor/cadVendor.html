@@ -1,0 +1,34 @@
+﻿<div class="container">
+    <h2>Cad Vendor</h2>
+    <hr />
+    <button class="btn btn-default" style="margin-bottom: 20px;">
+        <i class="glyphicon glyphicon-plus" ></i> &nbsp;
+        Create
+    </button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Vendor Name</th>
+                <th>Vendor Abbreviation</th>
+                <th>Actions</th>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vendors">
+                <td>{{item.VendorId}}</td>
+                <td>{{item.VendorName}}</td>
+                <td>{{item.VendorAbbreviation}}</td>                
+                <td>
+                    <button class="btn btn-default btn-xs">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </button>
+                    <button class="btn btn-default btn-xs">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </td>                
+            </tr>
+        </tbody>
+
+    </table>
+</div>

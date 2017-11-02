@@ -14,6 +14,7 @@ namespace BankLocations
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/respond.js",                 
                         "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.min.js",
                         "~/Scripts/jstree/jstree.min.js"
                       ));
 
