@@ -1,0 +1,17 @@
+﻿<div class="row main-content full-height" ng-controller="banks">
+    <div class="col-md-2 full-height sidebar">
+        <div class="sites">
+            <label class="control-label">Sites</label>
+            <select class="form-control" ng-change="onSiteChange()" ng-model="activeSite" ng-options="s as s.SiteName for s in sites"></select>
+            <hr />
+        </div>
+        <div class="tree">
+            <div ng-if="activeSite != null" js-tree="treeConfig" ng-model="zonesTree" tree="treeInstance" tree-events-obj="treeEvents"></div>
+        </div>
+    </div>
+    <div class="col-md-10 full-height locations">
+        @*<img class="site-image" src="data:image/png;base64, {{activeSite.BackgroundImage}}"/>*@
+        <canvas id="canvas_grid" canvas-grid></canvas>
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
