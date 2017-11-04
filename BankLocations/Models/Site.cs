@@ -8,7 +8,8 @@ namespace BankLocations.Models
 
     [Table("Site")]
     public partial class Site
-    { 
+    {       
+
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SiteId { get; set; }
 
@@ -18,5 +19,8 @@ namespace BankLocations.Models
 
         public byte[] BackgroundImage { get; set; }
 
+        public int? ImageWidthCadUnits { get; set; }
+
+        public int? ImageHeightCadUnits { get; set; }        
     }
 }

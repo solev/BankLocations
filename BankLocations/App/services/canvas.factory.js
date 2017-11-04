@@ -10,7 +10,7 @@
     function canvas($http) {
         var ctx, cnvs;
         const radius = 5;
-        const grid_size = 16;
+        const grid_size = 1;
 
         var service = {
             init: init,

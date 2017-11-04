@@ -5,36 +5,42 @@
         .module('app')
         .controller('cadVendor', cadVendor);
 
-    cadVendor.$inject = ['$scope','$http'];
+    cadVendor.$inject = ['$scope','$http','$uibModal'];
 
-    function cadVendor($scope, $http) {
+    function cadVendor($scope, $http, $uibModal) {
+        
+        $scope.vendors = [];
+        $scope.selectedVendor;
 
-        $scope.vendors = [
-            {
-                VendorId: 1,
-                VendorName: 'Vendor01',
-                VendorAbbreviation: 'V1'
-            },
-            {
-                VendorId: 2,
-                VendorName: 'Vendor02',
-                VendorAbbreviation: 'V2'
-            },
-            {
-                VendorId: 3,
-                VendorName: 'Vendor03',
-                VendorAbbreviation: 'V3'
-            },
-            {
-                VendorId: 4,
-                VendorName: 'Vendor04',
-                VendorAbbreviation: 'V4'
-            },
-            {
-                VendorId: 5,
-                VendorName: 'Vendor05',
-                VendorAbbreviation: 'V5'
-            }
-        ];
+        getData();
+        function getData() {
+            $http.get('/api/CadVendors').then(function (response) {
+                $scope.vendors = response.data;
+            })
+        }
+
+        $scope.openModal = function (vendor) {
+            $scope.selectedVendor = vendor;
+            var modalInstance = $uibModal.open({
+                templateUrl: 'App/views/cadVendor/cadVendorCreate/cadVendorCreate.html',               
+                controller: 'cadVendorCreate',
+                resolve: {
+                    vendor: angular.copy(vendor)
+                }
+            });
+
+            modalInstance.result.then(function (res) {
+                //$scope.selectedVendor = angular.extend($scope.selectedVendor, res);
+                getData();
+            });
+        }
+
+        $scope.delete = function (vendor, idx) {
+            $scope.vendors.splice(idx, 1);
+            $http.delete('/api/CadVendors/' + vendor.VendorId).then(function () {
+
+            })
+        }
+
     }
 })();

@@ -3,6 +3,7 @@
 
     angular.module('app', [
         'ngRoute',
+        'ui.bootstrap',
         'ngJsTree'
     ])
         .config(function ($routeProvider) {

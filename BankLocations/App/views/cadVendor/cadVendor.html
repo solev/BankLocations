@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <h2>Cad Vendor</h2>
     <hr />
-    <button class="btn btn-default" style="margin-bottom: 20px;">
+    <button class="btn btn-default" style="margin-bottom: 20px;" ng-click="openModal()">
         <i class="glyphicon glyphicon-plus" ></i> &nbsp;
         Create
     </button>
@@ -11,6 +11,7 @@
                 <th>ID</th>
                 <th>Vendor Name</th>
                 <th>Vendor Abbreviation</th>
+                <th>Color</th>
                 <th>Actions</th>
             </tr>            
         </thead>
@@ -19,11 +20,12 @@
                 <td>{{item.VendorId}}</td>
                 <td>{{item.VendorName}}</td>
                 <td>{{item.VendorAbbreviation}}</td>                
+                <td>{{item.Color}}</td>
                 <td>
-                    <button class="btn btn-default btn-xs">
+                    <button class="btn btn-default btn-xs" ng-click="openModal(item)">
                         <i class="glyphicon glyphicon-pencil"></i>
                     </button>
-                    <button class="btn btn-default btn-xs">
+                    <button class="btn btn-default btn-xs" ng-click="delete(item, $index)">
                         <i class="glyphicon glyphicon-trash"></i>
                     </button>
                 </td>                

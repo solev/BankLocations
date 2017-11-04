@@ -6,7 +6,7 @@ namespace BankLocations.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Tab_Data
+    public partial class vwTab_Data
     {
         [Key]
         [Column(Order = 0)]

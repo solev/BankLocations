@@ -14,9 +14,9 @@ namespace BankLocations.App_Start
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Zone, ZoneDto>();                
-                cfg.CreateMap<Bank, BankDto>();
-                cfg.CreateMap<Location, LocationDto>();
+                //cfg.CreateMap<Zone, ZoneDto>();                
+                //cfg.CreateMap<Bank, BankDto>();
+                //cfg.CreateMap<Location, LocationDto>();
             });
         }
     }

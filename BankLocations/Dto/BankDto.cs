@@ -7,10 +7,13 @@ namespace BankLocations.Dto
 {
     public class BankDto
     {
-        public int BankId { get; set; }
+        public string BankId { get; set; }
         public string BankNumber { get; set; }
-        public int ZoneId { get; set; }
+        public string ZoneId { get; set; }
+        public int? VendorId { get; set; }
+        public string VendorName { get; set; }
 
-        public virtual ICollection<LocationDto> Locations { get; set; }
+
+        public virtual List<LocationDto> Locations { get; set; }
     }
 }

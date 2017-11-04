@@ -200,6 +200,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CadVendorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SitesController.cs" />
     <Compile Include="Controllers\ZonesController.cs" />
@@ -209,12 +210,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\BankDb.cs" />
-    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\BankDbProcedures.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDbProcedures.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankDbProcedures.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDbProcedures.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankDbProcedures.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankDbProcedures.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CadVendor.cs" />
+    <Compile Include="Models\CadZoneBankLocation.cs" />
     <Compile Include="Models\Site.cs" />
-    <Compile Include="Models\Tab_Data.cs" />
-    <Compile Include="Models\Zone.cs" />
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BankDbProcedures.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>BankDbProcedures.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vwTab_Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +248,8 @@
     <Content Include="App\views\cadLocations\cadLocations.js" />
     <Content Include="App\views\cadVendor\cadVendor.html" />
     <Content Include="App\views\cadVendor\cadVendor.js" />
+    <Content Include="App\views\cadVendor\cadVendorCreate\cadVendorCreate.html" />
+    <Content Include="App\views\cadVendor\cadVendorCreate\cadVendorCreate.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\32px.png" />
     <Content Include="Content\bootstrap.css" />
@@ -245,6 +268,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\grid.png" />
+    <Content Include="Models\BankDbProcedures.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BankDbProcedures.edmx</DependentUpon>
+      <LastGenOutput>BankDbProcedures.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BankDbProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BankDbProcedures.edmx</DependentUpon>
+      <LastGenOutput>BankDbProcedures.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -323,6 +356,13 @@
     <Content Include="Content\fonts\titillium\titilliumweb-regular-webfont.eot" />
     <Content Include="Content\fonts\titillium\titilliumweb-regular-webfont.ttf" />
     <Content Include="Content\fonts\titillium\titilliumweb-regular-webfont.woff" />
+    <EntityDeploy Include="Models\BankDbProcedures.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BankDbProcedures.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BankDbProcedures.edmx.diagram">
+      <DependentUpon>BankDbProcedures.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\banklocations - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\banklocations - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -1089,6 +1129,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-2.5.0.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1130,6 +1171,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

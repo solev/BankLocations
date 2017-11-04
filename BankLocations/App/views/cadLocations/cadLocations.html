@@ -8,6 +8,28 @@
 
             <table style="width:100%;">
                 <tbody>
+
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Width (Cad Units)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{activeSite.ImageWidthCadUnits}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <b>
+                                Image Height (Cad Units)
+                            </b>
+                        </td>
+                        <td align="right">
+                            {{activeSite.ImageHeightCadUnits}}
+                        </td>
+                    </tr>
+
                     <tr>
                         <td align="left">
                             <b>
@@ -50,7 +72,14 @@
                     </tr>
                 </tbody>
             </table>
+            <p style="margin-top:15px;border-bottom: 1px solid #d2d2d2;font-weight:bold;">Vendor Details</p>
+            
+            <select class="form-control" ng-options="v.VendorId as v.VendorName for v in vendors" ng-model="selectedBank.VendorId" ng-disabled="selectedBank == null">
+                <option value="">-</option>
+            </select>
+            <button class="btn btn-default btn-sm" style="margin-top:7px;" ng-disabled="selectedBank == null" ng-click="updateVendor(selectedBank)">Assign</button>
             <hr />
+
         </div>
         <div class="tree">
             <div ng-if="activeSite != null" js-tree="treeConfig" ng-model="zonesTree" tree="treeInstance" tree-events-obj="treeEvents"></div>

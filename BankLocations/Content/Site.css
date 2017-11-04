@@ -2,6 +2,9 @@
 body {
   height: 100%;
 }
+.transition-25 {
+  transition: 0.25s ease-in-out;
+}
 .full-height {
   height: 100%;
 }
