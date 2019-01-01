@@ -365,6 +365,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\banklocations - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\banklocations - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
